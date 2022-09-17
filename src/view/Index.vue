@@ -89,7 +89,7 @@ export default {
 
   methods: {
     async getTransactions() {
-      const response = await api.get("http://localhost:8080/transaction");
+      const response = await api.get("/transaction");
 
       if (response.status != 200) {
         console.error("Ocorreu um erro com a API");
@@ -136,15 +136,15 @@ export default {
 
     async deleteTransaction(id) {
       await api
-        .delete(`http://localhost:8080/transaction/${id}`)
+        .delete(`/transaction/${id}`)
         .then(() => this.getTransactions());
     },
 
     async createTransaction() {
       this.transaction.date = Utils.formatDate(this.transaction.date);
 
-      const create = await axios
-        .post("http://localhost:8080/transaction", this.transaction)
+      const create = await api
+        .post("/transaction", this.transaction)
         .then((response) => {
           this.getTransactions();
           this.closeModal();
