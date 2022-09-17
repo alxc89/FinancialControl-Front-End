@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
     "vue": "^3.2.37"
   },
   "devDependencies": {
