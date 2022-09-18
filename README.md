@@ -14,6 +14,9 @@ Projeto voltado para entrada de receitas e despesas, voltado para controle de fi
 É possível cadastrar uma receita ou despesas e excluir, é totalizado por Entradas e Saídas, mostrado em cards, e também o Total geral, onde é retirado das Receitas as Despesas, e totaliza o saldo mostrando em um card.
 
 ---
+### Publicado em:
+####https://fabulous-shortbread-ed34aa.netlify.app/
+---
 
 ### 🛠️ Tecnologias
 
