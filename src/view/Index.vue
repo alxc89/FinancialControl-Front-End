@@ -8,8 +8,15 @@
     </section>
 
     <section id="transaction">
-      <div class="create-transactions" @click.prevent="openModal">
-        <a class="button new-transaction" id="new-transaction" @click.prevent="openModal">+ Nova Transação</a>
+      <div class="container-transaction">
+        <div class="create-transactions">
+          <a class="button new-transaction" id="new-transaction" @click.prevent="openModal">+ Nova Transação</a>
+        </div>
+        <div class="containter-filter">
+          <div class="filter">
+            <FilterIcon />
+          </div>
+        </div>
       </div>
       <Transaction :transactions="transactions" :deleteTransaction="deleteTransaction" />
     </section>
@@ -58,15 +65,14 @@
   </div>
 </template>
 <script>
-
 import Balance from "../components/Balance.vue";
 import api from "./../services/api";
 import Transaction from "../components/Transaction.vue";
 import Utils from "../utils/Utils";
-import axios from "axios";
+import FilterIcon from 'vue-material-design-icons/Filter.vue'
 
 export default {
-  components: { Balance, Transaction },
+  components: { Balance, Transaction, FilterIcon },
   data() {
     return {
       isOpen: false,
@@ -135,9 +141,7 @@ export default {
     },
 
     async deleteTransaction(id) {
-      await api
-        .delete(`/transaction/${id}`)
-        .then(() => this.getTransactions());
+      await api.delete(`/transaction/${id}`).then(() => this.getTransactions());
     },
 
     async createTransaction() {
@@ -150,8 +154,9 @@ export default {
           this.closeModal();
           Utils.clearFields(this.transaction);
           return response.status;
-        }).catch((error) => {
-          console.error(error.message)
+        })
+        .catch((error) => {
+          console.error(error.message);
         });
       return create;
     },

@@ -1,6 +1,6 @@
 :root {
   --dark-blue: #363f5f;
-  --green: #49aa26;
+  --blue: #17246d;
   --light-green: #3dd705;
   --red: #e92929;
 }
@@ -45,7 +45,7 @@ h2 {
 
 /*Links & buttons*/
 a {
-  color: var(--green);
+  color: var(--blue);
   text-decoration: none;
   cursor: pointer;
 }
@@ -59,7 +59,7 @@ button {
   height: 50px;
   border: none;
   color: white;
-  background: var(--green);
+  background: var(--blue);
   padding: 0;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -71,8 +71,33 @@ button:hover {
 
 .create-transactions {
   display: flex;
-  /* width: 50%; */
+  width: 50%;
   justify-content: space-between;
+}
+
+.button.new-transaction {
+  width: 40%;
+}
+
+.container-transaction {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.filter {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-icon {
+  margin-top: 2px;
+  color: var(--blue)
 }
 
 .button.new .button.import {
@@ -97,7 +122,7 @@ button:hover {
 
 /* Header*/
 header {
-  background: #2d4a22;
+  background: #101828;
   padding: 2rem 0 10rem;
   text-align: center;
 }
@@ -143,7 +168,7 @@ h1.logo {
 }
 
 .card.total {
-  background: var(--green);
+  background: var(--blue);
   color: white;
 }
 
